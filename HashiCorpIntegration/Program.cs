@@ -20,6 +20,12 @@ builder.Services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =
     var fallbackConnectionString = configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(fallbackConnectionString);
 });
+//builder.Services.AddDbContext<ApplicationDbContext>(async (serviceProvider, options) =>
+//{
+//    var vaultService = serviceProvider.GetRequiredService<IVaultService>();
+//    var connectionString = await vaultService.GetSqlConnectionStringAsync();
+//    options.UseSqlServer(connectionString);
+//});
 
 // Then use a background service to update connection string if needed
 
