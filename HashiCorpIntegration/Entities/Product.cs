@@ -1,4 +1,6 @@
-﻿namespace HashiCorpIntegration.Entities
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace HashiCorpIntegration.Entities
 {
     public class Product
     {
@@ -11,6 +13,7 @@
         public string? ImageUrl { get; set; } = string.Empty;
         public DateTime CreatedDate { get; set; }
 
+        [ValidateNever]
         public Category Category { get; set; } = default!;
     }
 }
