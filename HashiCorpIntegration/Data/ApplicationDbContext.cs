@@ -43,9 +43,11 @@ namespace HashiCorpIntegration.Data
                       .HasColumnType("decimal(18,2)")
                       .IsRequired();
                 entity.Property(p => p.Description)
-                      .HasMaxLength(1000);
+                      .HasMaxLength(1000)
+                      .IsRequired(false);
                 entity.Property(p => p.ImageUrl)
-                      .HasMaxLength(500);
+                      .HasMaxLength(500)
+                      .IsRequired(false);
                 entity.Property(p => p.CreatedDate)
                       .IsRequired();
                 entity.Property(p => p.StockQuantity)
