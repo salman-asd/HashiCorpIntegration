@@ -1,0 +1,37 @@
+@model HashiCorpIntegration.Controllers.VaultTestResultViewModel
+@{
+    ViewData["Title"] = "Vault Integration Test";
+}
+
+<h2>Vault Integration Test</h2>
+
+<div class="card mb-3">
+    <div class="card-header">Vault Connection</div>
+    <div class="card-body">
+        @if (Model.VaultConnectionSuccess)
+        {
+            <span class="text-success">Vault connection successful.</span>
+            <div><strong>Connection String:</strong> <code>@Model.VaultConnectionString</code></div>
+        }
+        else
+        {
+            <span class="text-danger">Vault connection failed.</span>
+            <div><strong>Error:</strong> @Model.VaultError</div>
+        }
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">Database Connection</div>
+    <div class="card-body">
+        @if (Model.DatabaseConnectionSuccess)
+        {
+            <span class="text-success">Database connection successful.</span>
+        }
+        else
+        {
+            <span class="text-danger">Database connection failed.</span>
+            <div><strong>Error:</strong> @Model.DatabaseError</div>
+        }
+    </div>
+</div>

@@ -1,8 +1,8 @@
-﻿namespace HashiCorpIntegration.Entities
+﻿namespace HashiCorpIntegration.Entities;
+
+public class Category
 {
-    public class Category
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
-}   
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
